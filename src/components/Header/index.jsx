@@ -1,3 +1,4 @@
+import Cart from "../Cart";
 import Nav from "../Nav"
 
 function Header() {
@@ -5,6 +6,7 @@ function Header() {
         <>
         <h1>React-ecom</h1>
         <Nav />
+        <Cart />
         </>
     );
 }
