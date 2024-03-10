@@ -1,11 +1,13 @@
+import { HeaderLinksList } from "./index.styles";
+
 function Nav() {
     return (
         <nav>
-            <ul>
+            <HeaderLinksList>
                 <li>Home</li>
                 <li>About</li>
                 <li>Contact</li>
-            </ul>
+            </HeaderLinksList>
         </nav>
     );
 }
