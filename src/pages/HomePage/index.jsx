@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { useApi } from "../../hooks/useApi";
@@ -5,7 +6,7 @@ import * as S from "./index.styles";
 
 function Home() {
     const { data, isLoading, isError} = useApi('https://v2.api.noroff.dev/online-shop');
-    console.log(data);
+    const [searchTerm, setSearchTerm] = useState('');
 
     if(isLoading) {
         return <Loader />
@@ -14,11 +15,22 @@ function Home() {
     if(isError) {
         return <div>Error</div>
     }
+
+    const filteredProducts = data.filter(product =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
-        <main>
+        <S.Main>
             <S.Heading>Products</S.Heading>
+            <S.SearchBar 
+                type="text" 
+                placeholder="Search products..." 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+            />
             <S.ProductsContainer>
-                {data && data.map((product) => (
+                {filteredProducts.map((product) => (
                     <S.ProductCard key={product.id}>
                         <S.ProductImage src={product.image?.url} alt={product.title} />
                         <S.ProductTitle>{product.title}</S.ProductTitle>
@@ -32,15 +44,14 @@ function Home() {
                             </div>
                             )}
                         </S.ProductPrice>
-                            <Link to={`/product/${product.id}`}>
-                                <button>View</button>
-                            </Link>
-                     
+                        <Link to={`/product/${product.id}`}>
+                            <button>View</button>
+                        </Link>
                     </S.ProductCard>
                 ))}
             </S.ProductsContainer>
 
-        </main>
+        </S.Main>
     );
 }
 
