@@ -31,17 +31,4 @@ margin-bottom: 0.5rem;
 
 export const ProductPrice = styled.h4`
 margin-bottom: 0,5rem;
-
-.discounted-price {
-    display: flex; 
-    flex-direction: column;
-}
-
-.old-price {
-    text-decoration: line-through;
-}
-
-.on-sale-price {
-    color: red;
-}
 `;

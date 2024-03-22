@@ -4,6 +4,7 @@ import ContactPage from "./pages/ContactPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import AboutPage from "./pages/AboutPage";
 import Home from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <Route index element={<Home />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/about" element={<AboutPage />} />
+    <Route path="/product/:id" element={<ProductPage />} />
     <Route path="*" element={<CheckoutPage />} /> {/* Wildcard route at the end */}
   </Route>
 </Routes>

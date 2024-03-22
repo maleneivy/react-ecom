@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.discounted-price {
+  display: flex; 
+  flex-direction: column;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+.on-sale-price {
+  color: red;
+}

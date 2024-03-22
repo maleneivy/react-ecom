@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { useApi } from "../../hooks/useApi";
 import * as S from "./index.styles";
@@ -31,6 +32,10 @@ function Home() {
                             </div>
                             )}
                         </S.ProductPrice>
+                            <Link to={`/product/${product.id}`}>
+                                <button>View</button>
+                            </Link>
+                     
                     </S.ProductCard>
                 ))}
             </S.ProductsContainer>
