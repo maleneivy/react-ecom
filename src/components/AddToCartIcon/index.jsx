@@ -1,10 +1,10 @@
 import CartIcon from "../../assets/icons/cart-icon.png";
 import { StyledCartIcon } from "./index.styles";
 
-function Cart() {
+function AddToCartIcon() {
     return (
         <StyledCartIcon src={CartIcon} alt="Cart icon" />
     )
 }
 
-export default Cart;
+export default AddToCartIcon;
