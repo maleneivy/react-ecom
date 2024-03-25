@@ -20,11 +20,6 @@ function ProductPage() {
     if (isError) {
         return <h3>error</h3>
     }
-
-    console.log(product)
-
-
-
     return (
         <>
         <S.ProductCard>
