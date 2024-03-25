@@ -15,7 +15,7 @@ function App() {
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/product/:id" element={<ProductPage />} />
-    <Route path="*" element={<CheckoutPage />} /> {/* Wildcard route at the end */}
+    <Route path="/cart" element={<CheckoutPage />} />
   </Route>
 </Routes>
 

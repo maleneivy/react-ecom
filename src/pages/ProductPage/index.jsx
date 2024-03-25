@@ -2,10 +2,16 @@ import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
 import Loader from "../../components/Loader";
 import * as S from "../ProductPage/index.styles";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../components/Cart/cartSlice";
 
 function ProductPage() {
     let { id } = useParams();
     const { data: product, isLoading, isError } = useApi(`https://v2.api.noroff.dev/online-shop/${id}`);
+    const dispatch = useDispatch();
+    const handleAddToCart = () => {
+        dispatch(addToCart(product));
+    };
 
     if(isLoading || product === null) {
         return <Loader />
@@ -16,6 +22,9 @@ function ProductPage() {
     }
 
     console.log(product)
+
+
+
     return (
         <>
         <S.ProductCard>
@@ -41,6 +50,7 @@ function ProductPage() {
                             )}
              </h3>
             <p>{product.description}</p>
+            <button onClick={handleAddToCart}>Add to cart</button>
             </S.ProductTextContentContainer>
         </S.ProductCard>
         </>
