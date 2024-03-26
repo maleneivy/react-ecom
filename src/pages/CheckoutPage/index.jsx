@@ -36,11 +36,15 @@ const CheckoutPage = () => {
     }
 
     const handleCheckOut = () => {
-        dispatch(clearCheckedOutCart());
-        dispatch(clearCart());
-        localStorage.removeItem("cart");
-        
-    }
+        const confirmation = window.confirm("Are you sure you want to checkout? Your cart will be erased if you do.");
+        if (confirmation) {
+            dispatch(clearCheckedOutCart());
+            dispatch(clearCart());
+            localStorage.removeItem("cart");
+            window.location.href = "/checkout-success"; 
+        }
+    };
+
 
     if (cart.length === 0) {
         return <p>Your cart is empty.</p>;
@@ -60,9 +64,7 @@ const CheckoutPage = () => {
             ))}
             <div>
                 <h3>Total cost: {totalCost}NOK</h3>
-                <Link to="/checkout-success" onClick={handleCheckOut}>
-                    <button>Checkout</button>
-                </Link>
+                <button onClick={handleCheckOut}>Checkout</button>
             </div>
         </>
     );

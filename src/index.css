@@ -25,3 +25,16 @@ code {
 .on-sale-price {
   color: red;
 }
+
+.message {
+  padding: 1rem;
+  text-align: center;
+}
+
+.success {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color: red;
+}
