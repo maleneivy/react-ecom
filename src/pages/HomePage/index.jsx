@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import Loader from "../../components/Loader";
 import { useApi } from "../../hooks/useApi";
 import * as S from "./index.styles";
+import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
 
 function Home() {
+    useCartFromLocalStorage();
     const { data, isLoading, isError} = useApi('https://v2.api.noroff.dev/online-shop');
     const [searchTerm, setSearchTerm] = useState('');
 

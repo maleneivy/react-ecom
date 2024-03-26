@@ -16,6 +16,27 @@ export const updateCartFromLocalStorage = (totalProducts) => {
     };
 };
 
+const addToCartAction = (product) => {
+    return {
+        type: 'cart/addToCart',
+        payload: product,
+    };
+};
+
+const updateTotalProducts = (totalProducts) => {
+    return {
+        type: 'cart/updateTotalProducts',
+        payload: totalProducts,
+    };
+};
+
+export const addToCartAndUpdate = (product) => (dispatch, getState) => {
+    dispatch(addToCartAction(product));
+    const updatedCart = getState().cart.products;
+    updateLocalStorage(updatedCart);
+    updateTotalProducts(updatedCart); 
+};
+
 const cartSlice = createSlice({
     name: 'cart', 
     initialState, 
@@ -28,12 +49,12 @@ const cartSlice = createSlice({
         },
         addToCart(state, action) {
             const newProduct = action.payload;
-            const existingProduct = state.products.find(product => product.id === newProduct.id);
-
-            if (existingProduct) {
-                existingProduct.quantity += 1;
+            const existingProductIndex = state.products.findIndex(product => product.id === newProduct.id);
+        
+            if (existingProductIndex !== -1) {
+                state.products[existingProductIndex].quantity += 1;
             } else {
-                state.products.push({...newProduct, quantity: 1});
+                state.products.push({ ...newProduct, quantity: 1 });
             }
             updateLocalStorage(state.products);
             const totalProducts = state.products.reduce((total, product) => total + product.quantity, 0);

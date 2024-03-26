@@ -1,26 +1,13 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, removeFromCart, updateCartFromLocalStorage, updateQuantity } from "../../components/Cart/cartSlice";
+import { clearCart, removeFromCart, updateQuantity } from "../../components/Cart/cartSlice";
 import { clearCheckedOutCart } from "../../components/Cart/checkedOutSlice";
 import { Link } from "react-router-dom";
+import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
-    const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart"));
     const cart = useSelector(state => state.cart.products);
-
-    useEffect(() => {
-        if (!cart.length && !cartFromLocalStorage) {
-            return;
-        }
-
-        const isCartDifferentFromLocalStorage = JSON.stringify(cart) !== JSON.stringify(cartFromLocalStorage);
-    
-        if (isCartDifferentFromLocalStorage) {
-
-            dispatch(updateCartFromLocalStorage(cartFromLocalStorage));
-        }
-    }, [dispatch, cart, cartFromLocalStorage]);
+    useCartFromLocalStorage();
     
 
     const totalCost = cart.reduce((total, product) => {
@@ -34,7 +21,7 @@ const CheckoutPage = () => {
 
     const handleDecreaseQuantity = (productId) => {
         const product = cart.find(product => product.id === productId);
-        if (!product) return; // Guard clause to handle invalid product ID
+        if (!product) return;
     
         if (product.quantity <= 1) {
             dispatch(removeFromCart(productId));

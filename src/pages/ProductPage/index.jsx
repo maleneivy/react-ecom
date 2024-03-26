@@ -4,6 +4,7 @@ import Loader from "../../components/Loader";
 import * as S from "../ProductPage/index.styles";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../components/Cart/cartSlice";
+import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 
 function ProductPage() {
     let { id } = useParams();
@@ -12,6 +13,8 @@ function ProductPage() {
     const handleAddToCart = () => {
         dispatch(addToCart(product));
     };
+
+    useCartFromLocalStorage();
 
     if(isLoading || product === null) {
         return <Loader />
