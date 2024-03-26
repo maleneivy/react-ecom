@@ -3,6 +3,7 @@ import { clearCart, removeFromCart, updateQuantity } from "../../components/Cart
 import { clearCheckedOutCart } from "../../components/Cart/checkedOutSlice";
 import { Link } from "react-router-dom";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
+import Message from "../../components/Message";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -47,7 +48,12 @@ const CheckoutPage = () => {
 
 
     if (cart.length === 0) {
-        return <p>Your cart is empty.</p>;
+        return (
+            <>
+            <Message text="Your cart is empty" type="info"/>
+            <Link to="/">Back to store</Link>
+            </>
+            )
     }
 
     return (
