@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Message from '../../components/Message';
 import * as S from "./index.styles";
+import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
 
 const ContactPage = () => {
+  useCartFromLocalStorage();
   const [fullName, setFullName] = useState('');
   const [subject, setSubject] = useState('');
   const [email, setEmail] = useState('');
