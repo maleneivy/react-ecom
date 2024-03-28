@@ -4,6 +4,8 @@ import { clearCheckedOutCart } from "../../components/Cart/checkedOutSlice";
 import { Link } from "react-router-dom";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 import Message from "../../components/Message";
+import * as S from "./index.styles";
+import BaseButton from "../../components/BaseButton";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -31,7 +33,6 @@ const CheckoutPage = () => {
         }
     }
     
-
     const handleDeleteProduct = (productId) => {
         dispatch(removeFromCart(productId));
     }
@@ -58,22 +59,54 @@ const CheckoutPage = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            {cart.map(product => (
-                <div key={product.id}>
-                    <h3>{product.title}: Quantity: {product.quantity}</h3>
-                    <p>Price: ${product.discountedPrice || product.price}</p>
-                    <button onClick={() => handleIncreaseQuantity(product.id)}>+</button>
-                    <button onClick={() => handleDecreaseQuantity(product.id)}>-</button>
-                    <button onClick={() => handleDeleteProduct(product.id)}>Delete product</button>
+            <S.CartContainer>
+                <h1>ShoppingCart</h1>
+                {cart.map((product, index) => (
+                    <div key={product.id}>
+                        <S.ProductInCart>
+                            <div>
+                                <Link to={`/product/${product.id}`}>
+                                    <S.ProductCartImage src={product.image?.url} alt={product.title} />
+                                </Link>
+                            </div>
+                            <S.ProductCartInfo>
+                                <h3>{product.title}</h3>
+                                <S.ProductPrice>
+                                    {product.price === product.discountedPrice ? (
+                                        <span>{product.price}</span>
+                                    ) : (
+                                        <div className="discounted-price">
+                                            <span className="on-sale-price">{product.discountedPrice} NOK</span>
+                                            <span className="old-price">Originally: {product.price}</span>
+                                        </div>
+                                    )}
+                                </S.ProductPrice>
+                            </S.ProductCartInfo>
+                            <S.QuantityContainer>
+                                <S.HandleQuantity>
+                                    <button className="quantity-button" onClick={() => handleIncreaseQuantity(product.id)}>+</button>
+                                    <button className="quantity-button" onClick={() => handleDecreaseQuantity(product.id)}>-</button>
+                                    <p>Quantity: {product.quantity}</p>
+                                </S.HandleQuantity>
+                                <S.DeleteButtonContainer>
+                                    <BaseButton className="delete-product-from-cart-button" onClick={() => handleDeleteProduct(product.id)}>Delete product</BaseButton>
+                                </S.DeleteButtonContainer>
+                            </S.QuantityContainer>
+                        </S.ProductInCart>
+                        {index !== cart.length - 1 && <S.HorizontalLine />}
+                    </div>
+                ))}
+            </S.CartContainer>
+            <S.CartContainer>
+                <div> 
+                    <h3>Total cost: {totalCost}NOK</h3>
+                    <BaseButton onClick={handleCheckOut} className="cart-button">Checkout</BaseButton>
                 </div>
-            ))}
-            <div>
-                <h3>Total cost: {totalCost}NOK</h3>
-                <button onClick={handleCheckOut}>Checkout</button>
-            </div>
+            </S.CartContainer>
         </>
     );
+    
+    
 }
 
 export default CheckoutPage;
