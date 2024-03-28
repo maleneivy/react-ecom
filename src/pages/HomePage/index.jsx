@@ -4,6 +4,7 @@ import Loader from "../../components/Loader";
 import { useApi } from "../../hooks/useApi";
 import * as S from "./index.styles";
 import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
+import BaseButton from '../../components/BaseButton';
 
 function Home() {
     useCartFromLocalStorage();
@@ -24,17 +25,20 @@ function Home() {
 
     return (
         <S.Main>
+            <S.TopSection>
             <S.Heading>Products</S.Heading>
             <S.SearchBar 
                 type="text" 
-                placeholder="Search products..." 
+                placeholder="Search by title..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
+            </S.TopSection>
             <S.ProductsContainer>
                 {filteredProducts.map((product) => (
                     <S.ProductCard key={product.id}>
                         <S.ProductImage src={product.image?.url} alt={product.title} />
+                        <S.ProductTTextContent>
                         <S.ProductTitle>{product.title}</S.ProductTitle>
                         <S.ProductPrice>
                             {product.price === product.discountedPrice ? (
@@ -47,12 +51,12 @@ function Home() {
                             )}
                         </S.ProductPrice>
                         <Link to={`/product/${product.id}`}>
-                            <button>View</button>
+                            <BaseButton>View</BaseButton>
                         </Link>
+                        </S.ProductTTextContent>
                     </S.ProductCard>
                 ))}
             </S.ProductsContainer>
-
         </S.Main>
     );
 }
