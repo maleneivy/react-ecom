@@ -14,7 +14,7 @@ const CheckoutPage = () => {
     const totalCost = cart.reduce((total, product) => {
         const price = product.discountedPrice || product.price;
         return total + (price * product.quantity);
-    }, 0);
+    }, 0).toFixed(2);
 
     const handleIncreaseQuantity = (productId) => {
         dispatch(updateQuantity({ productId, quantity: cart.find(product => product.id === productId).quantity + 1 }));
