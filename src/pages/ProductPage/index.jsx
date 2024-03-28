@@ -5,6 +5,7 @@ import * as S from "../ProductPage/index.styles";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../components/Cart/cartSlice";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
+import BaseButton from "../../components/BaseButton";
 
 function ProductPage() {
     let { id } = useParams();
@@ -14,6 +15,7 @@ function ProductPage() {
         dispatch(addToCart(product));
     };
 
+    console.log(product);
     useCartFromLocalStorage();
 
     if(isLoading || product === null) {
@@ -48,7 +50,7 @@ function ProductPage() {
                             )}
              </h3>
             <p>{product.description}</p>
-            <button onClick={handleAddToCart}>Add to cart</button>
+            <BaseButton onClick={handleAddToCart}>Add to cart</BaseButton>
             </S.ProductTextContentContainer>
         </S.ProductCard>
         </>
