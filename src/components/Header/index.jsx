@@ -6,8 +6,8 @@ function Header() {
     return (
         <HeaderContainer>
         <h1>React-ecom</h1>
-        <Nav />
         <AddToCartIcon/>
+        <Nav />
         </HeaderContainer>
     );
 }
