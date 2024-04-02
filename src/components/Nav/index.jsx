@@ -16,9 +16,6 @@ function Nav() {
         <nav>
             <S.HeaderLinksList>
             <li>
-            <Link to="/">Home</Link>
-            </li>
-            <li>
             <Link to="/contact">Contact</Link>
             </li>
             <li>
@@ -33,11 +30,6 @@ function Nav() {
             isOpen={menuOpen}
             onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
             >
-            <li>
-            <Link onClick={closeMenu} to="/">
-            Home
-            </Link>
-            </li>
             <li>
             <Link onClick={closeMenu} to="/contact">
             Contact
