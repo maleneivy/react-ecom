@@ -5,6 +5,7 @@ import { useApi } from "../../hooks/useApi";
 import * as S from "./index.styles";
 import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
 import BaseButton from '../../components/BaseButton';
+import Message from '../../components/Message';
 
 function Home() {
     useCartFromLocalStorage();
@@ -26,39 +27,44 @@ function Home() {
     return (
         <>
             <S.TopSection>
-            <S.Heading>Products</S.Heading>
-            <S.SearchBar 
-                type="text" 
-                placeholder="Search by title..." 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-            />
+                <S.Heading>Products</S.Heading>
+                <S.SearchBar 
+                    type="text" 
+                    placeholder="Search by title..." 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
             </S.TopSection>
             <S.ProductsContainer>
-                {filteredProducts.map((product) => (
-                    <S.ProductCard key={product.id}>
-                        <S.ProductImage src={product.image?.url} alt={product.title} />
-                        <S.ProductTTextContent>
-                        <S.ProductTitle>{product.title}</S.ProductTitle>
-                        <S.ProductPrice>
-                            {product.price === product.discountedPrice ? (
-                                <span>{product.price}</span>
-                            ) : (
-                            <div className="discounted-price">
-                                <span className="on-sale-price">{product.discountedPrice} NOK</span>
-                                <span className="old-price">Originally: {product.price}</span>
-                            </div>
-                            )}
-                        </S.ProductPrice>
-                        <Link to={`/product/${product.id}`}>
-                            <BaseButton>View</BaseButton>
-                        </Link>
-                        </S.ProductTTextContent>
-                    </S.ProductCard>
-                ))}
+                {filteredProducts.length === 0 ? (
+                    <Message text="No search results" type="info"/>
+                ) : (
+                    filteredProducts.map((product) => (
+                        <S.ProductCard key={product.id}>
+                            <S.ProductImage src={product.image?.url} alt={product.title} />
+                            <S.ProductTTextContent>
+                                <S.ProductTitle>{product.title}</S.ProductTitle>
+                                <S.ProductPrice>
+                                    {product.price === product.discountedPrice ? (
+                                        <span>{product.price}</span>
+                                    ) : (
+                                        <div className="discounted-price">
+                                            <span className="on-sale-price">{product.discountedPrice} NOK</span>
+                                            <span className="old-price">Originally: {product.price}</span>
+                                        </div>
+                                    )}
+                                </S.ProductPrice>
+                                <Link to={`/product/${product.id}`}>
+                                    <BaseButton>View</BaseButton>
+                                </Link>
+                            </S.ProductTTextContent>
+                        </S.ProductCard>
+                    ))
+                )}
             </S.ProductsContainer>
         </>
     );
 }
 
 export default Home;
+
