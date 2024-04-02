@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import CartIcon from "../../assets/icons/cart-icon.png";
-import { StyledCartIcon } from "./index.styles";
+import { CartIconContainer, StyledCartIcon } from "./index.styles";
 import { Link } from "react-router-dom";
 
 function AddToCartIcon() {
@@ -11,12 +11,12 @@ function AddToCartIcon() {
     }, 0);
 
     return (
-        <>
+        <CartIconContainer>
         <Link to="/cart">
            <StyledCartIcon src={CartIcon} alt="Cart icon" />
            <span>{totalProducts}</span>   
         </Link>
-        </>
+        </CartIconContainer>
      
     )
 }

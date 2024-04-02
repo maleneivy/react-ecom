@@ -7,3 +7,8 @@ align-items: baseline;
 padding: 1rem;
 background-color: #C2D7E0;
 `;
+
+export const MenuContainer = styled.div`
+display: flex;
+align-items: baseline;
+`;
