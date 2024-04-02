@@ -24,7 +24,7 @@ function Home() {
     );
 
     return (
-        <S.Main>
+        <>
             <S.TopSection>
             <S.Heading>Products</S.Heading>
             <S.SearchBar 
@@ -57,7 +57,7 @@ function Home() {
                     </S.ProductCard>
                 ))}
             </S.ProductsContainer>
-        </S.Main>
+        </>
     );
 }
 

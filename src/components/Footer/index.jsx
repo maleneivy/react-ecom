@@ -1,8 +1,10 @@
+import { FooterStyles } from "./index.styles";
+
 function Footer() {
     return (
-        <footer>
+        <FooterStyles>
             <p>Copyright @2024 MaleneIvy</p>
-        </footer>
+        </FooterStyles>
     );
 }
 

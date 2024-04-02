@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
-display: flex;
-flex-direction: column;
-max-width: 1200px;
-margin: 0 auto;
-background-color: #f2fcfa;
-`;
 
 export const TopSection = styled.div`
 display: flex; 
