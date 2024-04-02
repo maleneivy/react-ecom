@@ -12,6 +12,10 @@ export const ProductInCart = styled.div`
 background-color: #fff;
 display: flex;
 margin: 1.5rem auto;
+
+@media screen and (max-width:850px) {
+    flex-direction: column;
+}
 `;
 
 export const ProductCartImage = styled.img`
@@ -25,12 +29,19 @@ export const ProductCartInfo = styled.div `
 display: flex;
 flex-direction: column;
 padding-left: 1rem;
+
+@media screen and (max-width:850px) {
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
 `;
 
 export const QuantityContainer = styled.div`
 display: flex;
 flex-direction: column;
 flex-grow: 1;
+justify-content: space-evenly;
 `;
 
 export const HandleQuantity = styled.div `
@@ -38,34 +49,60 @@ display: flex;
 align-items: center;
 justify-content: end;
 
+@media screen and (max-width:850px) {
+    justify-content: center
+}
 
 button {
     height: 2rem;
     width: 2rem;
+    border: solid #fff;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 9px;
+
+
+    &:hover {
+        background-color: #C2D7E0;
+         border: solid #C2D7E0;
+    }
+
+    &:active {
+        background-color: #fff;
+    }
 }
 
 p {
     color: red;
+    margin-left: 0.8rem;
+    font-size: 1.3rem;
+    
 }
 
 .quantity-button {
     margin: 0.2rem;
 }
-`;
-
-export const DeleteButtonContainer = styled.div`
-text-align: end;
 
 .delete-product-from-cart-button {
-    align-self: end;
-    width: 7rem;
+    align-self: start;
     margin-top: 1rem;
-    background-color: #FF4D48;
-}
+    border: solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    background: #fff;
+    padding: unset;
+    margin-left: 2rem;
+
+    &:hover {
+     background-color: #C2D7E0;
+      border: solid #C2D7E0;
+    }
 `;
 
+
 export const ProductPrice = styled.div`
-background-color: lightblue;
+background-color: #fff;
 `;
 
 export const HorizontalLine = styled.hr`

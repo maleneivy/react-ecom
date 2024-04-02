@@ -7,6 +7,7 @@ import Message from "../../components/Message";
 import * as S from "./index.styles";
 import BaseButton from "../../components/BaseButton";
 import { GoBackButton } from "../../components/GoBackButton";
+import { Add, SubTract, TrashCan } from "../../components/Icons";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -66,12 +67,10 @@ const CheckoutPage = () => {
                 {cart.map((product, index) => (
                     <div key={product.id}>
                         <S.ProductInCart>
-                            <div>
+                            <S.ProductCartInfo>
                                 <Link to={`/product/${product.id}`}>
                                     <S.ProductCartImage src={product.image?.url} alt={product.title} />
                                 </Link>
-                            </div>
-                            <S.ProductCartInfo>
                                 <h3>{product.title}</h3>
                                 <S.ProductPrice>
                                     {product.price === product.discountedPrice ? (
@@ -86,13 +85,18 @@ const CheckoutPage = () => {
                             </S.ProductCartInfo>
                             <S.QuantityContainer>
                                 <S.HandleQuantity>
-                                    <button className="quantity-button" onClick={() => handleIncreaseQuantity(product.id)}>+</button>
-                                    <button className="quantity-button" onClick={() => handleDecreaseQuantity(product.id)}>-</button>
-                                    <p>Quantity: {product.quantity}</p>
+                                    <button className="quantity-button" onClick={() => handleIncreaseQuantity(product.id)}>
+                                        <Add />
+                                    </button>
+                                    <button className="quantity-button" onClick={() => handleDecreaseQuantity(product.id)}>
+                                        <SubTract />
+                                    </button>
+                                    <p>{product.quantity}</p>
+                                
+                                    <BaseButton className="delete-product-from-cart-button" onClick={() => handleDeleteProduct(product.id)}>
+                                        <TrashCan />
+                                    </BaseButton>
                                 </S.HandleQuantity>
-                                <S.DeleteButtonContainer>
-                                    <BaseButton className="delete-product-from-cart-button" onClick={() => handleDeleteProduct(product.id)}>Delete product</BaseButton>
-                                </S.DeleteButtonContainer>
                             </S.QuantityContainer>
                         </S.ProductInCart>
                         {index !== cart.length - 1 && <S.HorizontalLine />}
