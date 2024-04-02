@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Message from '../../components/Message';
 import * as S from "./index.styles";
 import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
+import { GoBackButton } from '../../components/GoBackButton';
 
 const ContactPage = () => {
   useCartFromLocalStorage();
@@ -51,6 +52,9 @@ const ContactPage = () => {
   return (
     <S.PageContainer>
       <S.FormContainer onSubmit={handleSubmit}>
+      <div>
+      <GoBackButton />
+      </div>
       <h1>Contact Us</h1>
       {showSuccessMessage && <Message text={successMessageText} type="success" />}
       {showErrorMessage && <Message text={invalidErrorMessage} type="error" />}

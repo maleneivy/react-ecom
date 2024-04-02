@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../components/Cart/cartSlice";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 import BaseButton from "../../components/BaseButton";
+import { GoBackButton } from "../../components/GoBackButton";
 
 function ProductPage() {
     let { id } = useParams();
@@ -28,6 +29,9 @@ function ProductPage() {
     return (
         <>
         <S.ProductCard>
+            <S.BackButtonContainer>
+                <GoBackButton />
+            </S.BackButtonContainer>
             <S.ProductImage src={product.image?.url} alt={product.title} />
             <S.ProductTextContentContainer>
             <h1>{product.title}</h1>

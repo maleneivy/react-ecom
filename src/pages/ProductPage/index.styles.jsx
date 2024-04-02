@@ -6,6 +6,7 @@ display: flex;
 background-color: #f2fcfa;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 margin: 1rem auto; 
+position: relative;
 
 @media screen and (max-width: 1050px) {
     margin: 1rem 4rem;
@@ -39,3 +40,7 @@ export const ProductTags = styled.p`
 font-size: 1em; 
 margin-top: 0;
 `
+
+export const BackButtonContainer = styled.div`
+position: absolute;
+`;

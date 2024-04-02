@@ -6,6 +6,7 @@ import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 import Message from "../../components/Message";
 import * as S from "./index.styles";
 import BaseButton from "../../components/BaseButton";
+import { GoBackButton } from "../../components/GoBackButton";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -60,6 +61,7 @@ const CheckoutPage = () => {
     return (
         <>
             <S.CartContainer>
+                <GoBackButton />
                 <h1>ShoppingCart</h1>
                 {cart.map((product, index) => (
                     <div key={product.id}>
