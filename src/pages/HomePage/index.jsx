@@ -6,6 +6,7 @@ import * as S from "./index.styles";
 import { useCartFromLocalStorage } from '../../utils/localStorage/getCart';
 import BaseButton from '../../components/BaseButton';
 import Message from '../../components/Message';
+import DiscountedPrice from '../../components/DiscountedPrice';
 
 function Home() {
     useCartFromLocalStorage();
@@ -41,6 +42,10 @@ function Home() {
                 ) : (
                     filteredProducts.map((product) => (
                         <S.ProductCard key={product.id}>
+                            <DiscountedPrice 
+                            originalPrice={product.price}
+                            discountedPrice={product.discountedPrice}
+                            />
                             <S.ProductImage src={product.image?.url} alt={product.title} />
                             <S.ProductTTextContent>
                                 <S.ProductTitle>{product.title}</S.ProductTitle>
