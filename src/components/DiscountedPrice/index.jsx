@@ -1,3 +1,5 @@
+import { DiscountByPercentage } from "./index.styles";
+
 function calculateDiscountedPercentage(originalPrice, discountedPrice) {
     const discount = originalPrice - discountedPrice;
     const discountPercentage = (discount/originalPrice*100);
@@ -9,7 +11,7 @@ function DiscountedPrice({ originalPrice, discountedPrice }) {
 
     if (discountedPrice < originalPrice) {
         return (
-            <div className="discount-percentage">Save {discountPercentage}%</div>
+            <DiscountByPercentage>Save {discountPercentage}%</DiscountByPercentage>
         );
     } else {
         return null;

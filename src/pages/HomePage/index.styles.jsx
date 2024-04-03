@@ -66,8 +66,9 @@ justify-content: space-between;
 margin: 2rem;
 width: calc(30% - 2rem);
 max-width: 300px; 
-background-color: #f2fcfa;
+background-color: #fff;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+position: relative;
 
 @media screen and (max-width: 1100px) {
     width: calc(40% - 2rem);
@@ -114,4 +115,10 @@ width: fit-content;
 border-radius: 8px;
 color: #000;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const SavePriceContainer = styled.div`
+position: absolute;
+right: 0; 
+top: 0;
 `;

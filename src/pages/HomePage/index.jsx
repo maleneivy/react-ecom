@@ -42,10 +42,12 @@ function Home() {
                 ) : (
                     filteredProducts.map((product) => (
                         <S.ProductCard key={product.id}>
+                        <S.SavePriceContainer>
                             <DiscountedPrice 
                             originalPrice={product.price}
                             discountedPrice={product.discountedPrice}
                             />
+                        </S.SavePriceContainer>
                             <S.ProductImage src={product.image?.url} alt={product.title} />
                             <S.ProductTTextContent>
                                 <S.ProductTitle>{product.title}</S.ProductTitle>
