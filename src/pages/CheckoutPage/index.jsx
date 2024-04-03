@@ -8,6 +8,8 @@ import * as S from "./index.styles";
 import BaseButton from "../../components/BaseButton";
 import { GoBackButton } from "../../components/GoBackButton";
 import { Add, SubTract, TrashCan } from "../../components/Icons";
+import DiscountedPrice from "../../components/DiscountedPrice";
+import { SavePriceContainer } from "../HomePage/index.styles";
 
 const CheckoutPage = () => {
     const dispatch = useDispatch();
@@ -67,6 +69,12 @@ const CheckoutPage = () => {
                 {cart.map((product, index) => (
                     <div key={product.id}>
                         <S.ProductInCart>
+                        <SavePriceContainer>
+                        <DiscountedPrice 
+                                        originalPrice={product.price}
+                                        discountedPrice={product.discountedPrice}
+                                    />
+                        </SavePriceContainer>
                             <S.ProductCartInfo>
                                 <Link to={`/product/${product.id}`}>
                                     <S.ProductCartImage src={product.image?.url} alt={product.title} />

@@ -12,6 +12,7 @@ export const ProductInCart = styled.div`
 background-color: #fff;
 display: flex;
 margin: 1.5rem auto;
+position: relative;
 
 @media screen and (max-width:850px) {
     flex-direction: column;
