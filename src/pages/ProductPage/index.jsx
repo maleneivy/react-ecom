@@ -7,6 +7,8 @@ import { addToCart } from "../../components/Cart/cartSlice";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 import BaseButton from "../../components/BaseButton";
 import { GoBackButton } from "../../components/GoBackButton";
+import DiscountedPrice from "../../components/DiscountedPrice";
+import { SavePriceContainer } from "../HomePage/index.styles";
 
 function ProductPage() {
     let { id } = useParams();
@@ -32,6 +34,12 @@ function ProductPage() {
             <S.BackButtonContainer>
                 <GoBackButton />
             </S.BackButtonContainer>
+            <SavePriceContainer>
+            <DiscountedPrice 
+                            originalPrice={product.price}
+                            discountedPrice={product.discountedPrice}
+                            />
+            </SavePriceContainer>
             <S.ProductImage src={product.image?.url} alt={product.title} />
             <S.ProductTextContentContainer>
             <h1>{product.title}</h1>
