@@ -61,6 +61,11 @@ const CheckoutPage = () => {
             )
     }
 
+    const totalSaved = cart.reduce((total, product) => {
+        const priceDifference = product.price - (product.discountedPrice || 0);
+        return total + (priceDifference * product.quantity);
+    }, 0).toFixed(2);
+
     return (
         <>
             <S.CartContainer>
@@ -114,6 +119,7 @@ const CheckoutPage = () => {
             <S.CartContainer>
                 <div> 
                     <h3>Total cost: {totalCost}NOK</h3>
+                    <p className="on-sale-price">Total discount: {totalSaved}</p>
                     <BaseButton onClick={handleCheckOut} className="cart-button">Checkout</BaseButton>
                 </div>
             </S.CartContainer>
@@ -124,5 +130,3 @@ const CheckoutPage = () => {
 }
 
 export default CheckoutPage;
-
-
