@@ -24,6 +24,7 @@ position: relative;
 export const ProductImage = styled.img`
 max-height: 400px;
 margin: 1rem;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 @media screen and (max-width:900px) {
     object-fit: cover;

@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const CartContainer = styled.div`
 max-width: 500px;
-border-radius: 9px;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 padding: 1.5rem;
 margin: 1rem auto;
@@ -24,6 +24,7 @@ height: 130px;
 width: 100px;
 object fit: cover;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 `;
 
 export const ProductCartInfo = styled.div `
@@ -61,7 +62,7 @@ button {
     padding: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-    border-radius: 9px;
+    border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 
     &:hover {

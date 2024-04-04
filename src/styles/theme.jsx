@@ -12,6 +12,10 @@ const theme = {
         primary: 'var(--font-primary)',
         secondary: 'var(--font-secondary)',
     },
+    borderRadius: {
+        smooth: '9px',
+        smoothTop: '9px 9px 0 0',
+    },
 };
 
 export const Theme = ({children}) => (

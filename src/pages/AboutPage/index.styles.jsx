@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 margin: 2rem 4rem;
 padding: 3rem auto 2rem 3rem;
-border-radius: 9px;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 background-color: #fff;
 position: relative;

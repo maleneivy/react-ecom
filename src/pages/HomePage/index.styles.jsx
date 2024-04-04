@@ -41,7 +41,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 margin: 2rem 4rem;
-border-radius: 9px;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 background-color: #fff;
 
@@ -69,6 +69,7 @@ max-width: 300px;
 background-color: #fff;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 position: relative;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 @media screen and (max-width: 1100px) {
     width: calc(40% - 2rem);
@@ -92,6 +93,7 @@ export const ProductImage = styled.img`
 max-width: 100%;
 height: 200px;
 object-fit: cover;
+border-radius: ${(props) => props.theme.borderRadius.smoothTop};
 `;
 
 export const ProductTitle = styled.h3`
