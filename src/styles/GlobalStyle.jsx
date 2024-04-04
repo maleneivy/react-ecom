@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
     --color-light: #FDFDFD;
     --font-primary: 'Khmer MN', sans-serif;
     --font-secondary: 'apertura', sans-serif;
+    --font-size-large: 2em;
+    --font-size-medium: 1.5em;
+    --font-size-small: 1.17em;
+    --font-size-xSmall: 1em;
     height: 100%;
   }
 
@@ -25,11 +29,21 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-family: var(--font-primary)
+    font-family: var(--font-primary);
+    font-size: var(--font-size-large);
+  }
+
+  h2 {
+    font-size: var(--font-size-medium);
+  }
+
+  h3 {
+    font-size: var(--font-size-small);
   }
 
   p{
     font-weight: 400;
+    font-size: var(--font-size-xSmall);
   }
 
   .discounted-price {

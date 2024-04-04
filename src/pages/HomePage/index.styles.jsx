@@ -32,7 +32,7 @@ margin: 1rem 4rem;
 }
 
 @media screen and (max-width: 400px) {
-    margin: 1rem auto;
+    margin: 1rem 2rem;
 }
 `;
 

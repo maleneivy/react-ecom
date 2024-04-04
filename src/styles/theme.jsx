@@ -12,6 +12,12 @@ const theme = {
         primary: 'var(--font-primary)',
         secondary: 'var(--font-secondary)',
     },
+    fontSize: {
+        large: 'var(--font-size-large)',
+        medium: 'var(--font-size-medium)',
+        small: 'var(--font-size-small)',
+        xSmall: 'var(--font-size-large)',
+    },
     borderRadius: {
         smooth: '9px',
         smoothTop: '9px 9px 0 0',
