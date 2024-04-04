@@ -6,6 +6,18 @@ display: flex;
 li {
     list-style: none;
     margin-right: 1rem;
+
+    a {
+        text-decoration: none;
+        color: ${(props) => props.theme.color.secondary};
+        font-size: ${(props) => props.theme.fontSize.xSmall};
+
+        &:hover {
+            background-color: ${(props) => props.theme.color.primary};
+            padding: 0.4rem;
+            border-radius: ${(props) => props.theme.borderRadius.smooth};
+        }
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -19,8 +31,6 @@ display: none;
 @media screen and (max-width:850px) {
     display: block;
 }
-
-
 
 .bm-menu-wrap {
     background: ${(props) => props.theme.color.light};
