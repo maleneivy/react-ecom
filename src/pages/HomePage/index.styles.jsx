@@ -43,7 +43,7 @@ justify-content: center;
 margin: 2rem 4rem;
 border-radius: ${(props) => props.theme.borderRadius.smooth};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-background-color: #fff;
+background-color: ${(props) => props.theme.color.light};
 
 @media screen and (max-width: 800px) {
     max-width: 500px;
@@ -66,7 +66,7 @@ justify-content: space-between;
 margin: 2rem;
 width: calc(30% - 2rem);
 max-width: 300px; 
-background-color: #fff;
+background-color: ${(props) => props.theme.color.light};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 position: relative;
 border-radius: ${(props) => props.theme.borderRadius.smooth};
@@ -111,11 +111,10 @@ padding-bottom: 1rem;
 
 export const SearchBar = styled.input`
 padding: 0.6rem;
-border: solid 0.1px #fff;
-border-radius: 6px;
+border: solid 0.1px ${(props) => props.theme.color.light};
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 width: fit-content;
-border-radius: 8px;
-color: #000;
+color: ${(props) => props.theme.color.secondary};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 

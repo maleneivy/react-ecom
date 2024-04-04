@@ -2,29 +2,30 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const BarsIcon = styled(FontAwesomeIcon)`
-color: background: #628391;
-font-size: 2rem;
+color: ${(props) => props.theme.color.tertiary};
+font-size: ${(props) => props.theme.fontSize.large};
 `;
 
 export const CrossIcon = styled(FontAwesomeIcon)`
-color: background: #628391;
-font-size: 2rem;
+color: ${(props) => props.theme.color.tertiary};
+font-size: ${(props) => props.theme.fontSize.large};
 margin: 1rem 2rem 0 0;
 `;
 
 export const GoBackIcon = styled(FontAwesomeIcon)`
-color: background: #628391;
+color: ${(props) => props.theme.color.light};
+font-size: ${(props) => props.theme.fontSize.small};
 `;
 
 export const DeleteIcon = styled(FontAwesomeIcon)`
-color: #628391;
-font-size: 1.3rem;
+color: ${(props) => props.theme.color.tertiary};
+font-size: ${(props) => props.theme.fontSize.medium};
 `;
 
 export const AddIcon = styled(FontAwesomeIcon)`
-color: #628391;
+color: ${(props) => props.theme.color.tertiary};
 `;
 
 export const SubTractIcon = styled(FontAwesomeIcon)`
-color: #628391;
+color: ${(props) => props.theme.color.tertiary};
 `;

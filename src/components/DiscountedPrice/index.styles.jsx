@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const DiscountByPercentage = styled.div`
-background-color: #ff3707;
+background-color: ${(props) => props.theme.color.red};
 padding: 0.5rem;
 text-align: center;
 width: fit-content;

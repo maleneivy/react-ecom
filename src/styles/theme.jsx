@@ -6,7 +6,8 @@ const theme = {
         secondary: 'var(--color-secondary)',
         tertiary: 'var(--color-tertiary)',
         red: 'var(--color-red)',
-        light: 'var(--color-light',
+        light: 'var(--color-light)',
+        lightGreen: 'var(--color-light-green)',
     },
     font: {
         primary: 'var(--font-primary)',
@@ -16,7 +17,7 @@ const theme = {
         large: 'var(--font-size-large)',
         medium: 'var(--font-size-medium)',
         small: 'var(--font-size-small)',
-        xSmall: 'var(--font-size-large)',
+        xSmall: 'var(--font-size-xSmall)',
     },
     borderRadius: {
         smooth: '9px',

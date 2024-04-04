@@ -23,7 +23,7 @@ display: none;
 
 
 .bm-menu-wrap {
-    background: #fff;
+    background: ${(props) => props.theme.color.light};
     padding: 5rem 0 0;
     position: fixed;
     top: 0;

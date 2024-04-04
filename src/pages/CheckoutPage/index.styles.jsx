@@ -9,7 +9,7 @@ margin: 1rem auto;
 `;
 
 export const ProductInCart = styled.div`
-background-color: #fff;
+background-color: ${(props) => props.theme.color.light};
 display: flex;
 margin: 1.5rem auto;
 position: relative;
@@ -58,27 +58,27 @@ justify-content: end;
 button {
     height: 2rem;
     width: 2rem;
-    border: solid #fff;
+    border: solid ${(props) => props.theme.color.light};
     padding: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: ${(props) => props.theme.color.light};
     border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 
     &:hover {
-        background-color: #C2D7E0;
-         border: solid #C2D7E0;
+        background-color: ${(props) => props.theme.color.primary};
+        border: solid ${(props) => props.theme.color.primary};
     }
 
     &:active {
-        background-color: #fff;
+        background-color: ${(props) => props.theme.color.light};
     }
 }
 
 p {
-    color: red;
+    color: ${(props) => props.theme.color.red};
     margin-left: 0.8rem;
-    font-size: 1.3rem;
+    font-size: ${(props) => props.theme.fontSize.small};
     
 }
 
@@ -89,24 +89,23 @@ p {
 .delete-product-from-cart-button {
     align-self: start;
     margin-top: 1rem;
-    border: solid #fff;
+    border: solid ${(props) => props.theme.color.light};
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: fit-content;
-    background: #fff;
+    background: ${(props) => props.theme.color.light};
     padding: unset;
     margin-left: 2rem;
 
     &:hover {
-     background-color: #C2D7E0;
-      border: solid #C2D7E0;
+     background-color: ${(props) => props.theme.color.primary};
+      border: solid ${(props) => props.theme.color.primary};
     }
 `;
 
-
 export const ProductPrice = styled.div`
-background-color: #fff;
+background-color: ${(props) => props.theme.color.light};
 `;
 
 export const HorizontalLine = styled.hr`
-border-top: #4C656F;
+border-top: ${(props) => props.theme.color.secondary};
 `;

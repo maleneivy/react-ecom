@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --color-tertiary: #628391;
     --color-red: #FF3707;
     --color-light: #FDFDFD;
+    --color-light-green: #C2E0C2;
     --font-primary: 'Khmer MN', sans-serif;
     --font-secondary: 'apertura', sans-serif;
     --font-size-large: 2em;
@@ -57,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .on-sale-price {
-    color: #FF3707;
+    color: var(--color-red);
   }
   
   .message {
@@ -66,15 +67,15 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .success {
-    background-color: lightgreen;
+    background-color: var(--color-light-green);
   }
   
   .error {
-    background-color: red;
+    background-color: var(--color-red);
   }
   
   .info {
-    background-color: lightblue;
+    background-color: var(--color-primary);
     width: 100%;
   }
   

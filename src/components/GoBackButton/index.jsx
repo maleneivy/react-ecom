@@ -7,7 +7,7 @@ export const GoBackButton = () => {
     return (
         <>
         <BackButton onClick={() => navigate(-1)}>
-            <ArrowLeft /> Go back
+            <ArrowLeft /> <p>Go back</p>
         </BackButton>
         </>
     );

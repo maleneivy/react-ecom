@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const ProductCard = styled.div`
 max-width: 1000px;
 display: flex;
-background-color: #f2fcfa;
+background-color: ${(props) => props.theme.color.light};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 margin: 1rem auto; 
 position: relative;
@@ -38,7 +38,7 @@ margin: 1rem;
 `;
 
 export const ProductTags = styled.p`
-font-size: 1em; 
+font-size: ${(props) => props.theme.fontSize.xSmall}; 
 margin-top: 0;
 `
 
