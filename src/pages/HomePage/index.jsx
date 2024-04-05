@@ -29,12 +29,18 @@ function Home() {
         <>
             <S.TopSection>
                 <S.Heading>Products</S.Heading>
+                <S.SearchBarContainer>
                 <S.SearchBar 
                     type="text" 
                     placeholder="Search by title..." 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
+                    name="search"
                 />
+                 <S.ResetSearchButton onClick={() => setSearchTerm('')}>
+                        X
+                    </S.ResetSearchButton>
+                </S.SearchBarContainer>
             </S.TopSection>
             <S.ProductsContainer>
                 {filteredProducts.length === 0 ? (

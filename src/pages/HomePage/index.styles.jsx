@@ -109,13 +109,36 @@ padding-left: 1rem;
 padding-bottom: 1rem;
 `;
 
+export const SearchBarContainer = styled.div`
+display: flex; 
+align-items: center;
+`;
+
 export const SearchBar = styled.input`
 padding: 0.6rem;
 border: solid 0.1px ${(props) => props.theme.color.light};
-border-radius: ${(props) => props.theme.borderRadius.smooth};
+border-radius: 9px 0 0 9px;
 width: fit-content;
 color: ${(props) => props.theme.color.secondary};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const ResetSearchButton = styled.button`
+border: none;
+padding: 0.6rem; 
+font-size: ${(props) => props.theme.fontSize.xSmall};
+border-radius: 0 9px 9px 0;
+background-color:  ${(props) => props.theme.color.primary};
+color:  ${(props) => props.theme.color.secondary};
+
+&:hover {
+    background-color:  ${(props) => props.theme.color.tertiary};
+    color:  ${(props) => props.theme.color.light};
+}
+
+&:active {
+    background-color:  ${(props) => props.theme.color.light};
+}
 `;
 
 export const SavePriceContainer = styled.div`
