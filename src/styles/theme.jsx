@@ -8,6 +8,7 @@ const theme = {
         red: 'var(--color-red)',
         light: 'var(--color-light)',
         lightGreen: 'var(--color-light-green)',
+        lightBlue: 'var(--color-light-blue)',
     },
     font: {
         primary: 'var(--font-primary)',

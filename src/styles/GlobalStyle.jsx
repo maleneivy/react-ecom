@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --color-red: #FF3707;
     --color-light: #FDFDFD;
     --color-light-green: #C2E0C2;
+    --color-light-blue: #E7F8FF;
     --font-primary: 'Khmer MN', sans-serif;
     --font-secondary: 'apertura', sans-serif;
     --font-size-large: 2em;
@@ -21,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     font-family: var(--font-secondary);
+    color: var(--color-secondary);
   }
 
   #root {

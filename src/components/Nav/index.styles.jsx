@@ -33,7 +33,7 @@ display: none;
 }
 
 .bm-menu-wrap {
-    background: ${(props) => props.theme.color.light};
+    background: ${(props) => props.theme.color.lightBlue};
     padding: 5rem 0 0;
     position: fixed;
     top: 0;
@@ -51,6 +51,18 @@ display: none;
 .bm-item {
     padding: 1rem;
     margin-left: 30%;
+
+    a {
+        text-decoration: none;
+        color: ${(props) => props.theme.color.secondary};
+        font-size: ${(props) => props.theme.fontSize.xSmall};
+
+        &:hover {
+            background-color: ${(props) => props.theme.color.primary};
+            padding: 0.4rem;
+            border-radius: ${(props) => props.theme.borderRadius.smooth};
+        }
+    }
 }
 
 .bm-item a {
