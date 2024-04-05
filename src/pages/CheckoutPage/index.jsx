@@ -51,13 +51,17 @@ const CheckoutPage = () => {
         }
     };
 
-
     if (cart.length === 0) {
         return (
-            <>
+            <S.EmptyCartContainer>
+            <h1>Shopping cart</h1>
             <Message text="Your cart is empty" type="info"/>
-            <Link to="/">Back to store</Link>
-            </>
+            <S.BackToStoreContainer>
+                <Link to="/">
+                    <BaseButton>Go back to store</BaseButton>
+                </Link>
+            </S.BackToStoreContainer>
+            </S.EmptyCartContainer>
             )
     }
 

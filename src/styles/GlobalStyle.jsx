@@ -84,7 +84,6 @@ const GlobalStyle = createGlobalStyle`
 
   .info {
     background-color: var(--color-primary);
-    width: 100%;
   }
   
 `

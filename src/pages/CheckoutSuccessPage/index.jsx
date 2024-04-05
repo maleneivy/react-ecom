@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Message from "../../components/Message";
 import { useCartFromLocalStorage } from "../../utils/localStorage/getCart";
 import BaseButton from "../../components/BaseButton";
-import { BackToStoreContainer, SuccessContainer } from "./indes.styles";
+import { BackToStoreContainer, SuccessContainer } from "./index.styles";
 import { useApi } from "../../hooks/useApi";
 
 function CheckoutSuccessPage() {

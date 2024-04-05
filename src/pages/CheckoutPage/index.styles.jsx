@@ -109,3 +109,19 @@ background-color: ${(props) => props.theme.color.light};
 export const HorizontalLine = styled.hr`
 border-top: ${(props) => props.theme.color.secondary};
 `;
+
+export const EmptyCartContainer = styled.div`
+max-width: 1000px; 
+margin: 2rem auto;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 2rem;
+
+.info {
+    border-radius: ${(props) => props.theme.borderRadius.smooth};
+}
+`;
+
+export const BackToStoreContainer = styled.div`
+text-align: center;
+margin-top: 2rem;
+`;
