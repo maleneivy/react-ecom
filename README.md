@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Omni-things - A React Ecom Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## A Noroff Course Assignment
+This project is a Noroff CA, where the assignment was to build an eCom Store using React.
 
-In the project directory, you can run:
+The following pages was required: 
+* Homepage: 
+  * List of all products
+  * A look-ahead searchbar that filters products when typing product name.
+  * Clicking on product sends you to the individual product page. 
+  
+* Individual product page: 
+  * Displays chosen data for the product: title, image, description, reviews.
+  * Add to cart button
+  * disCountedPrice property to display price of product, and differences of price if there is discountedPrice. 
+  
+* Cart Page:
+  * List of products with price and total.
+  * Erase product from cart button.
+  * Checkout button, goes to checkout success page.
+  
+* Success Page: 
+  * Display message to user of success or not.
+  * Link: Go back to store.
+  * Clears the cart.
 
-### `npm start`
+* Contact Page:
+  * Form validation
+  * console.log the data from inputs when submitting.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Running the Application
 
-### `npm test`
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the dependencies.
+4. After installation, run `npm start` to start the development server.
+5. Open your browser and go to `http://localhost:3000` to view the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Building for Production
 
-### `npm run build`
+To build the application for production:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Ensure all changes are committed and pushed to your Git repository.
+2. Run `npm run build`.
+3. This command builds the app for production in the `build` folder.
+4. It correctly bundles React in production mode and optimizes the build for the best performance.
+5. The build is minified, and the filenames include the hashes.
+6. Your app is now ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Using Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you're using this project as a library of components:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Install the package via npm: `npm install your-package-name`.
+2. Import the desired components into your project.
+3. Use the components in your application as needed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dependencies used in the application
+| Dependency            | Version    |
+|-----------------------|------------|
+| React                 | ^18.2.0    |
+| React Scripts         | 5.0.1      |
+| React Router Dom      | ^6.22.3    |
+| React DOM             | ^18.2.0    |
+| React Redux           | ^9.1.0     |
+| Redux                 | ^5.0.1     |
+| React Burger Menu     | ^3.0.9     |
+| Reduxjs Toolkit       | ^2.2.2     |
+| FontAwesome           | ^6.5.1     |
+| React-Fontawesome     | ^0.2.0     |
+| Styled Components     | ^6.1.8     |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
