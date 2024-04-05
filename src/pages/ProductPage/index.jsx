@@ -9,14 +9,37 @@ import BaseButton from "../../components/BaseButton";
 import { GoBackButton } from "../../components/GoBackButton";
 import DiscountedPrice from "../../components/DiscountedPrice";
 import { SavePriceContainer } from "../HomePage/index.styles";
+import Message from "../../components/Message";
+import { useState, useEffect } from "react";
 
 function ProductPage() {
     let { id } = useParams();
     const { data: product, isLoading, isError } = useApi(`https://v2.api.noroff.dev/online-shop/${id}`);
     const dispatch = useDispatch();
+    const [message, setMessage] = useState(null);
+
+    useEffect(() => {
+        if (message) {
+            const timeout = setTimeout(() => {
+                setMessage(null);
+            }, 1000);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [message]);
+
     const handleAddToCart = () => {
         dispatch(addToCart(product));
+        displayAddedProductMessage(true);
     };
+
+    const displayAddedProductMessage = (success) => {
+        if (success) {
+            setMessage({ text: "Product added to cart", type: "added-product-success" });
+        } else {
+            setMessage({ text: "Something went wrong", type: "error" });
+        }
+    }
 
     console.log(product);
     useCartFromLocalStorage();
@@ -62,7 +85,10 @@ function ProductPage() {
                             )}
              </h3>
             <p>{product.description}</p>
+            <div>
             <BaseButton onClick={handleAddToCart}>Add to cart</BaseButton>
+            {message && <Message text={message.text} type={message.type} />}
+            </div>
             </S.ProductTextContentContainer>
         </S.ProductCard>
         </>

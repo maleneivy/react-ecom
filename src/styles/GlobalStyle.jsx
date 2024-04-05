@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --font-size-medium: 1.5em;
     --font-size-small: 1.17em;
     --font-size-xSmall: 1em;
+    --border-radius-smooth: 9px;
     height: 100%;
   }
 
@@ -84,6 +85,13 @@ const GlobalStyle = createGlobalStyle`
 
   .info {
     background-color: var(--color-primary);
+  }
+
+  .added-product-success {
+    padding: 0.3rem;
+    background-color: var(--color-light-green);
+    border-radius: var(--border-radius-smooth);
+    margin-top: 0.7rem;
   }
   
 `
