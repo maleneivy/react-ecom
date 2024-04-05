@@ -74,8 +74,14 @@ const GlobalStyle = createGlobalStyle`
   
   .error {
     background-color: var(--color-red);
+    color: var(--color-light);
+    font-weight: 700;
   }
   
+  .form-error {
+    color: var(--color-red);
+  }
+
   .info {
     background-color: var(--color-primary);
     width: 100%;
