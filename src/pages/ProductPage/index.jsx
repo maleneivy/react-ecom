@@ -95,11 +95,12 @@ function ProductPage() {
         <S.ReviewsContent>
         <S.ReviewsHeading>Reviews</S.ReviewsHeading>
         {product.reviews && product.reviews.length > 0 ? (
-                product.reviews.map((review) => (
+                product.reviews.map((review, index) => (
                     <S.ReviewText key={review.id}>
                         <p><strong>Username:</strong> {review.username}</p>
                         <p><strong>Description:</strong> {review.description}</p>
                         <p><strong>Rating:</strong> {review.rating}</p>
+                        {index !== product.reviews.length - 1 && <S.HorizontalLine />}
                     </S.ReviewText>
                 ))
             ) : (

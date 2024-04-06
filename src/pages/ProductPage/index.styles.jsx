@@ -52,6 +52,18 @@ background-color: ${(props) => props.theme.color.light};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 margin: 1rem auto; 
 padding-bottom: 1rem;
+
+@media screen and (max-width: 1050px) {
+    margin: 1rem 4rem;
+};
+
+@media screen and (max-width: 900px) {
+    flex-direction: column;
+}
+
+@media screen and (max-width: 700px) {
+    margin: 1rem 2rem;
+}
 `;
 
 export const ReviewsContent = styled.div`
@@ -60,9 +72,14 @@ margin: 1rem;
 
 export const ReviewText = styled.div`
 margin: 1rem;
+margin-bottom: 2rem;
 `;
 
 export const ReviewsHeading = styled.h2`
 padding: 1rem;
 text-decoration: underline;
+`;
+
+export const HorizontalLine = styled.hr`
+border-top: ${(props) => props.theme.color.secondary};
 `;
