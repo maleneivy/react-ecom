@@ -5,6 +5,7 @@ max-width: 1000px;
 display: flex;
 background-color: ${(props) => props.theme.color.light};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 margin: 1rem auto; 
 position: relative;
 
@@ -56,6 +57,7 @@ background-color: ${(props) => props.theme.color.light};
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 margin: 1rem auto; 
 padding-bottom: 1rem;
+border-radius: ${(props) => props.theme.borderRadius.smooth};
 
 @media screen and (max-width: 1050px) {
     margin: 1rem 4rem;
