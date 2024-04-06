@@ -91,11 +91,11 @@ const CheckoutPage = () => {
                                 <h3>{product.title}</h3>
                                 <S.ProductPrice>
                                     {product.price === product.discountedPrice ? (
-                                        <span>{product.price}</span>
+                                        <span>{product.price} NOK</span>
                                     ) : (
                                         <div className="discounted-price">
                                             <span className="on-sale-price">{product.discountedPrice} NOK</span>
-                                            <span className="old-price">Originally: {product.price}</span>
+                                            <span className="old-price">Originally: {product.price} NOK</span>
                                         </div>
                                     )}
                                 </S.ProductPrice>
