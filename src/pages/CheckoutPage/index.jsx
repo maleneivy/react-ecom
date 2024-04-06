@@ -123,7 +123,9 @@ const CheckoutPage = () => {
             <S.CartContainer>
                 <div> 
                     <h3>Total cost: {totalCost}NOK</h3>
-                    <p className="on-sale-price">Total discount: {totalSaved}</p>
+                    {totalSaved > 0 && (
+                    <p className="on-sale-price">Total discount: {totalSaved} NOK</p>
+                    )}
                     <BaseButton onClick={handleCheckOut} className="cart-button">Checkout</BaseButton>
                 </div>
             </S.CartContainer>
