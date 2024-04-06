@@ -45,3 +45,24 @@ margin-top: 0;
 export const BackButtonContainer = styled.div`
 position: absolute;
 `;
+
+export const ReviewsContainer = styled.div`
+max-width: 1000px;
+background-color: ${(props) => props.theme.color.light};
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin: 1rem auto; 
+padding-bottom: 1rem;
+`;
+
+export const ReviewsContent = styled.div`
+margin: 1rem;
+`;
+
+export const ReviewText = styled.div`
+margin: 1rem;
+`;
+
+export const ReviewsHeading = styled.h2`
+padding: 1rem;
+text-decoration: underline;
+`;
