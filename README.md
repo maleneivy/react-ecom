@@ -75,5 +75,6 @@ If you're using this project as a library of components:
 | FontAwesome           | ^6.5.1     |
 | React-Fontawesome     | ^0.2.0     |
 | Styled Components     | ^6.1.8     |
+| React Icons           | ^5.0.1     |
 
 

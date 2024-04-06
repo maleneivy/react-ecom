@@ -65,7 +65,9 @@ function ProductPage() {
             </SavePriceContainer>
             <S.ProductImage src={product.image?.url} alt={product.title} />
             <S.ProductTextContentContainer>
-            <h1>{product.title}</h1>
+            <S.ProductHeading>
+            {product.title}
+            </S.ProductHeading>
             <S.StarRatingContainer>
             <StarRating rating={product.rating} totalStars={5} />
             <S.ReviewLength>

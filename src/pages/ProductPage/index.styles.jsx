@@ -37,6 +37,10 @@ flex-direction: column;
 margin: 1rem;
 `;
 
+export const ProductHeading = styled.h1`
+margin-bottom: 0;
+`;
+
 export const ProductTags = styled.p`
 font-size: ${(props) => props.theme.fontSize.xSmall}; 
 margin-top: 0;
