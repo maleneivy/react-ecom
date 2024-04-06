@@ -11,6 +11,7 @@ import DiscountedPrice from "../../components/DiscountedPrice";
 import { SavePriceContainer } from "../HomePage/index.styles";
 import Message from "../../components/Message";
 import { useState, useEffect } from "react";
+import StarRating from "../../components/StarRating";
 
 function ProductPage() {
     let { id } = useParams();
@@ -42,6 +43,8 @@ function ProductPage() {
     }
 
     console.log(product);
+    console.log("Rating:", product.rating);
+
     useCartFromLocalStorage();
 
     if(isLoading || product === null) {
@@ -66,6 +69,14 @@ function ProductPage() {
             <S.ProductImage src={product.image?.url} alt={product.title} />
             <S.ProductTextContentContainer>
             <h1>{product.title}</h1>
+            <S.StarRatingContainer>
+            <StarRating rating={product.rating} totalStars={5} />
+            <S.ReviewLength>
+            {product.reviews && (
+        <span>({product.reviews.length})</span>
+    )}
+            </S.ReviewLength>
+            </S.StarRatingContainer>
             <S.ProductTags>
                 {product.tags?.map((tag, index) => (
                     <span key={tag}>

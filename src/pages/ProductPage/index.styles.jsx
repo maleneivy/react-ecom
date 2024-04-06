@@ -83,3 +83,12 @@ text-decoration: underline;
 export const HorizontalLine = styled.hr`
 border-top: ${(props) => props.theme.color.secondary};
 `;
+
+export const StarRatingContainer = styled.div`
+display: flex;
+position: absolute;
+`;
+
+export const ReviewLength = styled.div`
+padding-left: 0.3rem;
+`;
