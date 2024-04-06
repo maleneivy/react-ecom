@@ -42,9 +42,6 @@ function ProductPage() {
         }
     }
 
-    console.log(product);
-    console.log("Rating:", product.rating);
-
     useCartFromLocalStorage();
 
     if(isLoading || product === null) {

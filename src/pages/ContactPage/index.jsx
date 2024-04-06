@@ -80,7 +80,6 @@ const ContactPage = () => {
       setTimeout(() => {
         setShowErrorMessage(false);
       }, 5000);
-      console.log('Form validation failed. Please check your inputs.');
     }
   };
 

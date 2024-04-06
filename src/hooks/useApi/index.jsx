@@ -17,7 +17,6 @@ export function useApi(url) {
                 setData(json.data);
                 setIsLoading(false);
             } catch (error) {
-                console.log(error);
                 setIsError(true);
             } finally {
                 setIsLoading(false);
