@@ -107,6 +107,10 @@ margin-bottom: 0,5rem;
 export const ProductTTextContent = styled.div`
 padding-left: 1rem;
 padding-bottom: 1rem;
+
+button {
+    padding: 0.4rem 2rem 0.4rem 2rem;
+}
 `;
 
 export const SearchBarContainer = styled.div`
