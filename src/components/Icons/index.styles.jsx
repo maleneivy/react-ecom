@@ -9,7 +9,6 @@ font-size: ${(props) => props.theme.fontSize.large};
 export const CrossIcon = styled(FontAwesomeIcon)`
 color: ${(props) => props.theme.color.tertiary};
 font-size: ${(props) => props.theme.fontSize.large};
-margin: 1rem 2rem 0 0;
 `;
 
 export const GoBackIcon = styled(FontAwesomeIcon)`

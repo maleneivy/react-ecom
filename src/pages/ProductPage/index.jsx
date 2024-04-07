@@ -72,7 +72,7 @@ function ProductPage() {
             <StarRating rating={product.rating} totalStars={5} />
             <S.ReviewLength>
             {product.reviews && (
-        <span>({product.reviews.length})</span>
+        <S.ReviewLink href="#review-section">({product.reviews.length} reviews) </S.ReviewLink>
     )}
             </S.ReviewLength>
             </S.StarRatingContainer>
@@ -101,15 +101,16 @@ function ProductPage() {
             </div>
             </S.ProductTextContentContainer>
         </S.ProductCard>
-        <S.ReviewsContainer>
+        <S.ReviewsContainer id="review-section">
         <S.ReviewsContent>
         <S.ReviewsHeading>Reviews</S.ReviewsHeading>
+        <S.HorizontalLine />
         {product.reviews && product.reviews.length > 0 ? (
                 product.reviews.map((review, index) => (
                     <S.ReviewText key={review.id}>
-                        <p><strong>Username:</strong> {review.username}</p>
-                        <p><strong>Description:</strong> {review.description}</p>
-                        <p><strong>Rating:</strong> {review.rating}</p>
+                        <p><strong>By {review.username}</strong></p>
+                        <p className="review-p">"{review.description}"</p>
+                        <p className="rating-p">Rating: {review.rating}</p>
                         {index !== product.reviews.length - 1 && <S.HorizontalLine />}
                     </S.ReviewText>
                 ))

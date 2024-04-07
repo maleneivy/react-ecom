@@ -79,11 +79,19 @@ margin: 1rem;
 export const ReviewText = styled.div`
 margin: 1rem;
 margin-bottom: 2rem;
+
+.review-p {
+    font-style: italic;
+}
+
+.rating-p {
+    text-align: end;
+}
 `;
 
 export const ReviewsHeading = styled.h2`
 padding: 1rem;
-text-decoration: underline;
+margin-bottom: 0;
 `;
 
 export const HorizontalLine = styled.hr`
@@ -97,4 +105,8 @@ position: absolute;
 
 export const ReviewLength = styled.div`
 padding-left: 0.3rem;
+`;
+
+export const ReviewLink = styled.a`
+color: ${(props) => props.theme.color.secondary};
 `;

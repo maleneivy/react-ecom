@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: var(--font-secondary);
     color: var(--color-secondary);
+    background-color: var(--color-light);
   }
 
   #root {
